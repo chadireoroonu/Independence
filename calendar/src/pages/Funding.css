@@ -1,0 +1,9 @@
+#funding {
+  display: flex;
+  width: 98%;
+  min-height: 82vh;
+  margin: 0 1%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
