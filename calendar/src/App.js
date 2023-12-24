@@ -2,32 +2,34 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import './App.css';
 import Main from './pages/Main';
-import Sub from './pages/Sub';
+import Info from './pages/Info';
+import Funding from './pages/Funding';
 
 function App() {
   return (
     <Router>
-      <div>
-        {/* <header> */}
-          <div id='header'>
-            <p>헤더입니다.</p>
-            <ul>
-              <Link to="/">메인</Link>
-            </ul>
-            <ul>
-              <Link to="/sub">서브</Link>
-            </ul>
-          </div>
-        {/* </header> */}
-        <body>
+      <div id='app'>
+        <div id='header'>
+          <h3>
+            <Link to="/">독립달력</Link>
+          </h3>
+          <h3>
+            <Link to="/info">소개</Link>
+          </h3>
+          <h3>
+            <Link to="/funding">운용</Link>
+          </h3>
+        </div>
+        <div id='body'>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/sub" element={<Sub />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/funding" element={<Funding />} />
           </Routes>
-        </body>
+        </div>
         <div id='footer'>
           <div id='footer-first-line'>
-            <div class='inner-footer-first-line'>
+            <div class='inner-footer-line'>
               <p>CSES Fellowship 5기</p>
             </div>
             <div class='inner-footer-first-line'>
@@ -35,10 +37,10 @@ function App() {
             </div>
           </div>
           <div id='footer-second-line'>
-            <div class='inner-footer-second-line'>
+            <div class='inner-footer-line'>
               <p>이소정</p>
             </div>
-            <div class='inner-footer-second-line'>
+            <div class='inner-footer-line'>
               <p>문의 : chadireoroonu@gmail.com</p>
             </div>
           </div>
