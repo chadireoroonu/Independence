@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div>
-        <header>
+        {/* <header> */}
           <div id='header'>
             <p>헤더입니다.</p>
             <ul>
@@ -18,16 +18,31 @@ function App() {
               <Link to="/sub">서브</Link>
             </ul>
           </div>
-        </header>
+        {/* </header> */}
         <body>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/sub" element={<Sub />} />
           </Routes>
         </body>
-        <footer>
-          <p>푸터입니다.</p>
-        </footer>
+        <div id='footer'>
+          <div id='footer-first-line'>
+            <div class='inner-footer-first-line'>
+              <p>CSES Fellowship 5기</p>
+            </div>
+            <div class='inner-footer-first-line'>
+              <p>만년형 우리나라 독립달력</p>
+            </div>
+          </div>
+          <div id='footer-second-line'>
+            <div class='inner-footer-second-line'>
+              <p>이소정</p>
+            </div>
+            <div class='inner-footer-second-line'>
+              <p>문의 : chadireoroonu@gmail.com</p>
+            </div>
+          </div>
+        </div>
       </div>
     </Router>
   );
