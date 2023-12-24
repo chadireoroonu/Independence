@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  width: 100%;
 }
 
 .App-logo {
@@ -40,4 +42,42 @@
 #header {
   display: flex;
   flex-direction: row;
+}
+
+#footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #323232;
+
+  /* font */
+  color: white;
+  font-size: 10pt;
+}
+
+#footer-first-line {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -2%;
+}
+
+.inner-footer-first-line {
+  display: flex;
+  margin: 0 1% 0 1%;
+}
+
+#footer-second-line {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.inner-footer-second-line {
+  display: flex;
+  margin: 0 1% 0 1%;
 }
