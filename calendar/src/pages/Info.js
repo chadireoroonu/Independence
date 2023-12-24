@@ -1,8 +1,9 @@
 import React from 'react';
+import './Info.css'
 
 function Info() {
   return (
-    <div>
+    <div id='info'>
       <h2>소개페이지</h2>
     </div>
   );
