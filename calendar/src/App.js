@@ -9,17 +9,15 @@ function App() {
     <Router>
       <div>
         <header>
-          <p>헤더입니다.</p>
-          <nav>
+          <div id='header'>
+            <p>헤더입니다.</p>
             <ul>
-              <li>
-                <Link to="/">메인</Link>
-              </li>
-              <li>
-                <Link to="/sub">서브</Link>
-              </li>
+              <Link to="/">메인</Link>
             </ul>
-          </nav>
+            <ul>
+              <Link to="/sub">서브</Link>
+            </ul>
+          </div>
         </header>
         <body>
           <Routes>
