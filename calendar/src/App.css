@@ -27,7 +27,6 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 1%;
 }
 
 #header h3 {
@@ -41,11 +40,9 @@
 
 /* body */
 #body {
-  /* height: ; */
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1%;
 }
 
 /* footer */
@@ -73,7 +70,7 @@
 
 .inner-footer-line {
   display: flex;
-  margin: 0 1%;
+  padding: 0 1%;
 }
 
 #footer-second-line {
