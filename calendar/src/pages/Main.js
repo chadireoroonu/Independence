@@ -2,14 +2,25 @@ import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import styled from 'styled-components';
 import 'react-calendar/dist/Calendar.css';
+import Modal from 'react-modal';
+import DateModal from '../components/DateModal';
+
+Modal.setAppElement('#root');
 
 function Main() {
   const [date, setDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
+	const [modalOpen, setModalOpen] = useState(false);
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
+		console.log(selectedDate);
+		setModalOpen(true);
   };
+
+	const closeModal = () => {
+		setModalOpen(false);
+	}
 
   return (
     <MainContainer>
@@ -20,7 +31,13 @@ function Main() {
           onClickDay={handleDateClick}
         />
       </CalendarContainer>
-
+			<Modal
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Selected Date"
+      >
+				{selectedDate && <DateModal date={selectedDate} closeModal={closeModal} />}
+      </Modal>
     </MainContainer>
   );
 }
