@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Main from './pages/Main';
 import Info from './pages/Info';
 import Funding from './pages/Funding';
+import Date from './pages/Date';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/info" element={<Info />} />
             <Route path="/funding" element={<Funding />} />
+            <Route path="/date/:month/:day" element={<Date />} />
           </Routes>
         </div>
         <Footer>
