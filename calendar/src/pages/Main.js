@@ -95,7 +95,7 @@ function Main() {
         onRequestClose={closeModal}
         contentLabel="Selected Date"
       >
-				{selectedDate && <DateModal date={selectedDate} closeModal={closeModal} />}
+				{selectedDate && <DateModal date={selectedDate} setDate={setSelectedDate} closeModal={closeModal} />}
       </Modal>
     </MainContainer>
   );
