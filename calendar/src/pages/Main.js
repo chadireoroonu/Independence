@@ -9,21 +9,15 @@ function Main() {
   return (
 		<MainContainer>
       <h2>메인페이지</h2>
-      <CalendarBox>
+      <CalendarContainer>
         <Calendar
           setDate={setDate}
           date={date}
 					/>
-      </CalendarBox>
+      </CalendarContainer>
     </MainContainer>
   );
 }
-
-export const CalendarNavigation = styled.div`
-	background: ${({ theme }) => theme.color.pink};
-	border-bottom: 4px solid ${({ theme }) => theme.color.brown};
-	height: 90px;
-`;
 
 const MainContainer = styled.div`
 	width: 98%;
@@ -31,9 +25,23 @@ const MainContainer = styled.div`
 	margin: 0 1%;
 `;
 
-const CalendarBox = styled.div`
-	display: flex;
-	justify-content: center;
+const CalendarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+
+	.react-calendar {
+		width: 100%;
+		min-height: 58vh;
+		border: 1px solid #eeeeee;
+	}
+
+	.react-calendar__tile {
+		/* each cell css */
+		line-height: 7vh;
+	}
 `;
+
 
 export default Main;
