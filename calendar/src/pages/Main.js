@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import styled from 'styled-components';
 import 'react-calendar/dist/Calendar.css';
-import { useNavigate } from 'react-router-dom';
 
 function Main() {
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState("");
-  const navigate = useNavigate();
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
-		console.log(`${date.getMonth() + 1} ${date.getDate()}`)
-    navigate(`/date/${date.getMonth() + 1}/${date.getDate()}`);
   };
 
   return (
     <MainContainer>
-      <h2>메인페이지</h2>
       <CalendarContainer>
         <Calendar
           onChange={setDate}
@@ -25,6 +20,7 @@ function Main() {
           onClickDay={handleDateClick}
         />
       </CalendarContainer>
+
     </MainContainer>
   );
 }
@@ -38,7 +34,7 @@ const MainContainer = styled.div`
 const CalendarContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: auto;
+  margin: 1% auto;
   width: 80%;
 
   .react-calendar {
