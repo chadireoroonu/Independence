@@ -38,18 +38,45 @@ function Main() {
 		}
 	}, [date, data]);
 
+	// 각 일자에 몇 개의 사건이 있는지 확인
 	const dateClassName = (date) => {
 		if (data) {
 			const currentMonthData = data.find(item => item.month === (date.getMonth() + 1).toString());
 			if (currentMonthData) {
 				const currentDayData = currentMonthData.days[date.getDate().toString()];
 				if (currentDayData) {
-					return 'highlight';
+					return `highlight - ${currentDayData.length} events`;
 				}
 			}
 		}
 	};
 
+	const dateTileContent = ({ date, view }) => {
+		if (view === 'month' && data) {
+			const currentMonthData = data.find(item => item.month === (date.getMonth() + 1).toString());
+			if (currentMonthData) {
+				const currentDayData = currentMonthData.days[date.getDate().toString()];
+				if (currentDayData) {
+					return (
+						<span 
+							style={{ 
+								position: 'absolute', 
+								bottom: '0', 
+								left: '0', 
+								right: '0', 
+								textAlign: 'center', 
+								color: 'black',
+								fontSize: '8px'
+							}}
+						>
+							{currentDayData.length}
+						</span>
+					);
+				}
+			}
+		}
+		return null; // 데이터가 없거나, view가 'month'가 아닌 경우
+	};
 
   return (
     <MainContainer>
@@ -59,6 +86,7 @@ function Main() {
           value={date}
           onClickDay={handleDateClick}
 					tileClassName={({ date, view }) => dateClassName(date)}
+					tileContent={({ date, view }) => dateTileContent({ date, view })}
         />
       </CalendarContainer>
 			<Modal
@@ -94,6 +122,7 @@ const CalendarContainer = styled.div`
     /* each cell css */
     line-height: 7vh;
     padding: 0 0 20px 0;
+		position: relative;
   }
 	.highlight {
 		background-color: red;
