@@ -1,11 +1,16 @@
-import React from 'react';
-import './Main.css'
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import './Main.css';
+import 'react-calendar/dist/Calendar.css';
 
 function Main() {
+	const [date, setDate] = useState(new Date());
   return (
     <div id='main'>
     	<h2>메인페이지</h2>
-			<p>메인 페이지의 내용입니다.</p>
+			<div>
+				<Calendar setDate={setDate} date={date}/>
+			</div>
     </div>
   );
 }
