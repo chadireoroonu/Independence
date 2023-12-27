@@ -11,6 +11,7 @@ function Main() {
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
 	const [modalOpen, setModalOpen] = useState(false);
+	const [data, setData] = useState(null);
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
@@ -22,6 +23,34 @@ function Main() {
 		setModalOpen(false);
 	}
 
+	useEffect(() => {
+    fetch('/data.json')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.log(error));
+  }, []);
+
+  useEffect(() => {
+		if (data) {
+			console.log((date.getMonth() + 1).toString());
+			const currentMonthData = data.find(item => item.month === (date.getMonth() + 1).toString());
+			console.log(currentMonthData);
+		}
+	}, [date, data]);
+
+	const dateClassName = (date) => {
+		if (data) {
+			const currentMonthData = data.find(item => item.month === (date.getMonth() + 1).toString());
+			if (currentMonthData) {
+				const currentDayData = currentMonthData.days[date.getDate().toString()];
+				if (currentDayData) {
+					return 'highlight';
+				}
+			}
+		}
+	};
+
+
   return (
     <MainContainer>
       <CalendarContainer>
@@ -29,6 +58,7 @@ function Main() {
           onChange={setDate}
           value={date}
           onClickDay={handleDateClick}
+					tileClassName={({ date, view }) => dateClassName(date)}
         />
       </CalendarContainer>
 			<Modal
@@ -65,6 +95,10 @@ const CalendarContainer = styled.div`
     line-height: 7vh;
     padding: 0 0 20px 0;
   }
+	.highlight {
+		background-color: red;
+	}
+}
 `;
 
 export default Main;
