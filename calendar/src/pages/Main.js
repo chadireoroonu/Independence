@@ -85,6 +85,7 @@ function Main() {
           onChange={setDate}
           value={date}
           onClickDay={handleDateClick}
+					showNeighboringMonth={false}
 					tileClassName={({ date, view }) => dateClassName(date)}
 					tileContent={({ date, view }) => dateTileContent({ date, view })}
         />
