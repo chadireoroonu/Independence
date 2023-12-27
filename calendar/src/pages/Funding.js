@@ -13,7 +13,7 @@ function Funding() {
 const FundingContainer = styled.div`
   display: flex;
   width: 98%;
-  min-height: 82vh;
+  min-height: 100vh;
   margin: 0 1%;
   justify-content: center;
   align-items: center;
