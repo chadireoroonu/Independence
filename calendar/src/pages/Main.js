@@ -161,7 +161,7 @@ const CalendarContainer = styled.div`
   display: flex;
 	flex-direction: column;
   justify-content: center;
-  margin: 1% auto;
+  margin: 1.5em auto;
   width: 80%;
 
   .react-calendar {

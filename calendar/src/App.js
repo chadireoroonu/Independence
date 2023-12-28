@@ -8,7 +8,7 @@ import Funding from './pages/Funding';
 function App() {
   return (
     <Router>
-      <div id='app'>
+      <StyledApp>
         <Header>
           <HeaderTitle>
             <Link to="/">독립달력</Link>
@@ -45,16 +45,20 @@ function App() {
             </InnerFooterLine>
           </FooterSecondLine>
         </Footer>
-      </div>
+      </StyledApp>
     </Router>
   );
 }
+
+const StyledApp = styled.div`
+  background-color: #FFFFFF;
+`;
 
 const Header = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: #f5f5f5;
+  background-color: #F4EEEE;
   padding: 10px;
 `;
 
@@ -69,7 +73,7 @@ const Footer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #323232;
+  background-color: #221E1E;
   color: white;
   font-size: 10pt;
   padding: 10px;
