@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import AllEvents from './AllEvents';
 
 function DateModal({ date, setDate, closeModal }) {
   const [events, setEvents] = useState([]);
@@ -45,39 +46,12 @@ function DateModal({ date, setDate, closeModal }) {
       <DateText>{`${date.getMonth() + 1}월 ${date.getDate()}일`}</DateText>
       <ArrowButton onClick={moveToNextDay}>{">"}</ArrowButton>
       </HeaderContainer>
-      <ContentsContainer>
-        <CountContainer>
-          <h4>오늘의 사건은 {events.length}건 입니다.</h4>
-        </CountContainer>
-        {
-          events.length > 0 ? 
-          events.map((event, index) => (
-            <EachEvent key={index}>
-              <EventTitle>
-                <h3>{event.year}</h3>
-                <h5>{event.place}</h5>
-              </EventTitle>
-              <p>{event.event}</p>
-              <SearchLinkContainer>
-                <SearchLink href={`https://search.naver.com/search.naver?query=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-                  <img src="/path/to/naver-logo.png" alt="Naver logo" />
-                  <span>네이버에서 자세히보기</span>
-                </SearchLink>
-                <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-                  <img src="/path/to/google-logo.png" alt="Google logo" />
-                  <span>구글에서 자세히보기</span>
-                </SearchLink>
-                <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-                  <img src="/path/to/daum-logo.png" alt="Daum logo" />
-                  <span>다음에서 자세히보기</span>
-                </SearchLink>
-              </SearchLinkContainer>
-            </EachEvent>
-
-          )) :
-          <p>오늘의 사건 정보가 없습니다.</p>
-        }
-      </ContentsContainer>
+      <CountContainer>
+        <h4>오늘의 사건은 {events.length}건 입니다.</h4>
+      </CountContainer>
+      <AllEventsContainer>
+        <AllEvents events={events} />
+      </AllEventsContainer>
       <LowerModal>
         <LowerRed/>
         <LowerBlue/>
@@ -192,7 +166,7 @@ const ArrowButton = styled.button`
   }
 `;
 
-const ContentsContainer = styled.div`
+const AllEventsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,64 +182,5 @@ const CountContainer = styled.div`
   width: 100%;
   padding: 0 0 1em 0;
 `;
-
-const EachEvent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  width: 95%;
-  // padding: 0 1em;
-  margin: 1em;
-  // border: 1px solid #ddd;
-  // border-radius: 10px;
-`;
-
-const EventTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: -1em;
-
-  h3 {
-    margin-right: 1em;
-  }
-`;
-
-const SearchLinkContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 1em 0
-`;
-
-const SearchLink = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20em;
-  height: 10em;
-  color: #221E1E;
-	border: 2px solid #A59D9D;
-	border-radius: 10px;
-  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-
-  span {
-    text-align: center;
-  }
-`;
-
 
 export default DateModal;
