@@ -5,11 +5,8 @@ function EachEvent({ event }) {
   const randomNum1 = Math.floor(Math.random() * 21) + 1;
   const randomNum2 = Math.floor(Math.random() * 21) + 1;
   const randomNum3 = Math.floor(Math.random() * 21) + 1;
+  const randomNum4 = Math.floor(Math.random() * 21) + 1;
 
-  console.log(randomNum1);
-
-  
-  console.log(event)
     return (
       event &&
       <EachEventContainer>
@@ -30,6 +27,10 @@ function EachEvent({ event }) {
           <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
           <img src={`/tagImgs/${randomNum3}.png`} />
             <span>다음에서 자세히보기</span>
+          </SearchLink>
+          <SearchLink href={`https://www.bing.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
+          <img src={`/tagImgs/${randomNum4}.png`} />
+            <span>빙에서 자세히보기</span>
           </SearchLink>
         </SearchLinkContainer>
       </EachEventContainer>
@@ -64,7 +65,7 @@ const SearchLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20em;
+  width: 15em;
   color: #221E1E;
 	border: 2px solid #A59D9D;
 	border-radius: 10px;
