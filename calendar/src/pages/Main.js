@@ -58,7 +58,7 @@ function Main() {
 				const currentDayData = currentMonthData.days[date.getDate().toString()];
 				if (currentDayData && currentDayData.length > 0) {
 					return (
-						<span 
+						<div 
 							style={{ 
 								position: 'absolute', 
 								bottom: '0', 
@@ -69,8 +69,10 @@ function Main() {
 								fontSize: '8px'
 							}}
 						>
-							{currentDayData.length}
-						</span>
+							{Array(currentDayData.length).fill().map((_, index) => (
+								<span key={index} style={{color: '#A59D9D', fontSize: '15px'}}>●</span>
+							))}
+						</div>
 					);
 				}
 			}
