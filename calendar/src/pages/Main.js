@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import 'react-calendar/dist/Calendar.css';
 import Modal from 'react-modal';
 import DateModal from '../components/DateModal';
+import ForSearch from '../components/ForSearch';
 
 Modal.setAppElement('#root');
 
@@ -82,6 +83,9 @@ function Main() {
 
   return (
     <MainContainer>
+			<SearchContainer>
+				<ForSearch/>
+			</SearchContainer>
       <CalendarContainer>
 				<UpperCalendar>
 					<UpperRed/>
@@ -115,6 +119,9 @@ const MainContainer = styled.div`
   width: 98%;
   min-height: 90vh;
   margin: 0 1%;
+`;
+const SearchContainer = styled.div`
+	width: 100%;
 `;
 
 const UpperCalendar = styled.div`
