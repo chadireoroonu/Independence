@@ -56,7 +56,7 @@ function Main() {
 			const currentMonthData = data.find(item => item.month === (date.getMonth() + 1).toString());
 			if (currentMonthData) {
 				const currentDayData = currentMonthData.days[date.getDate().toString()];
-				if (currentDayData) {
+				if (currentDayData && currentDayData.length > 0) {
 					return (
 						<span 
 							style={{ 
