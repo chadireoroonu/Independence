@@ -4,6 +4,7 @@ import styled from 'styled-components';
 function DateModal({ date, setDate, closeModal }) {
   const [events, setEvents] = useState([]);
 
+  // 전일, 익일 이동
   const moveToPrevDay = () => {
     let prevDay = new Date(date);
     prevDay.setDate(prevDay.getDate() - 1);
@@ -39,6 +40,9 @@ function DateModal({ date, setDate, closeModal }) {
       <ArrowButton onClick={moveToNextDay}>→</ArrowButton>
       </HeaderContainer>
       <ContentsContainer>
+        <CountContainer>
+          <h4>오늘의 사건은 {events.length}건 입니다.</h4>
+        </CountContainer>
         {
           events.length > 0 ? 
           events.map((event, index) => (
@@ -110,13 +114,23 @@ const ContentsContainer = styled.div`
   padding: 1em;
 `;
 
+const CountContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+`;
+
 const EachEvent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 100%;
-  padding: 1em;
+  width: 95%;
+  padding: 0 1em;
+  // border: 1px solid #ddd;
+  // border-radius: 10px;
 `;
 
 const SearchLinkContainer = styled.div`
