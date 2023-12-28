@@ -22,7 +22,7 @@ const EachEventContainer = styled.div`
   align-items: start;
   width: 95%;
   // padding: 0 1em;
-  margin: 1em;
+  // margin: 1em;
   // border: 1px solid #ddd;
   // border-radius: 10px;
 `;

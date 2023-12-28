@@ -172,7 +172,7 @@ const AllEventsContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1em;
+  // padding: 1em;
 `;
 
 const CountContainer = styled.div`
@@ -180,7 +180,7 @@ const CountContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 0 1em 0;
+  padding: 1em 0 0 0;
 `;
 
 export default DateModal;
