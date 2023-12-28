@@ -25,8 +25,6 @@ function DateModal({ date, setDate, closeModal }) {
           const dayData = monthData.days[String(date.getDate())];
           if (dayData) {
             setEvents(dayData);
-
-            
           }
         }
       });
@@ -47,7 +45,22 @@ function DateModal({ date, setDate, closeModal }) {
             <EachEvent key={index}>
               <p>{event.year}</p>
               <p>{event.event}</p>
+              <SearchLinkContainer>
+                <SearchLink href={`https://search.naver.com/search.naver?query=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
+                  <img src="/path/to/naver-logo.png" alt="Naver logo" />
+                  <span>네이버로 알아보기</span>
+                </SearchLink>
+                <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
+                  <img src="/path/to/google-logo.png" alt="Google logo" />
+                  <span>구글로 알아보기</span>
+                </SearchLink>
+                <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
+                  <img src="/path/to/daum-logo.png" alt="Daum logo" />
+                  <span>다음으로 알아보기</span>
+                </SearchLink>
+              </SearchLinkContainer>
             </EachEvent>
+
           )) :
           <p>오늘의 사건 정보가 없습니다.</p>
         }
@@ -105,5 +118,42 @@ const EachEvent = styled.div`
   width: 100%;
   padding: 1em;
 `;
+
+const SearchLinkContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+`;
+
+const SearchLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  span {
+    text-align: center;
+  }
+`;
+
 
 export default DateModal;
