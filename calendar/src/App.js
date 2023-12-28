@@ -17,7 +17,7 @@ function App() {
             <Link to="/info">소개</Link>
           </HeaderTitle>
           <HeaderTitle>
-            <Link to="/funding">운용</Link>
+            <Link to="/funding">펀딩</Link>
           </HeaderTitle>
         </Header>
         <div id='body'>

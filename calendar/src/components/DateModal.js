@@ -25,6 +25,8 @@ function DateModal({ date, setDate, closeModal }) {
           const dayData = monthData.days[String(date.getDate())];
           if (dayData) {
             setEvents(dayData);
+
+            
           }
         }
       });
@@ -32,11 +34,24 @@ function DateModal({ date, setDate, closeModal }) {
 
   return (
     <ModalContent>
+      <HeaderContainer>
       <CloseButton onClick={closeModal}>X</CloseButton>
       <ArrowButton onClick={moveToPrevDay}>←</ArrowButton>
       <DateText>{`${date.getMonth() + 1}월 ${date.getDate()}일`}</DateText>
       <ArrowButton onClick={moveToNextDay}>→</ArrowButton>
-      {events.map((event, index) => <p key={index}>{`${event.year}: ${event.event}`}</p>)}
+      </HeaderContainer>
+      <ContentsContainer>
+        {
+          events.length > 0 ? 
+          events.map((event, index) => (
+            <EachEvent key={index}>
+              <p>{event.year}</p>
+              <p>{event.event}</p>
+            </EachEvent>
+          )) :
+          <p>오늘의 사건 정보가 없습니다.</p>
+        }
+      </ContentsContainer>
     </ModalContent>
   );
 }
@@ -48,6 +63,16 @@ const ModalContent = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  border-bottom: 1px solid #ddd;
+`;
+
 
 const CloseButton = styled.button`
   position: absolute;
@@ -61,6 +86,24 @@ const DateText = styled.h3`
 
 const ArrowButton = styled.button`
   /* 여기에 원하는 스타일을 적용하세요 */
+`;
+
+const ContentsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+`;
+
+const EachEvent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  padding: 1em;
 `;
 
 export default DateModal;
