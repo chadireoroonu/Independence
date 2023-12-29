@@ -2,11 +2,7 @@ import React from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis } from 'victory';
 import styled from 'styled-components';
 
-function DataCharts({ data }) {
-
-  if (!data || !data[0] || !data[0].days) {
-    return null;
-  }
+function MonthlyChart({ data }) {
 
   const labels = [...Array(Object.keys(data[0].days).length).keys()];
 
@@ -18,35 +14,35 @@ function DataCharts({ data }) {
   }));
 
   return (
-    <ChartsContainer>
+    <MonthlyChartContainer>
       <ChartTitle>{`${data[0].month}월의 사건 수`}</ChartTitle>
       <VictoryChart domainPadding={20}>
         <VictoryAxis
           tickValues={labels.map(label => label + 1)}
           style={{ 
-            tickLabels: {fontSize: 8, fontFamily: 'Arial, sans-serif'} // tickLabels의 글꼴을 Arial로 설정합니다.
+            tickLabels: {fontSize: 8, fontFamily: 'Arial, sans-serif'}
           }}
         />
         <VictoryAxis
           dependentAxis
           tickFormat={(x) => (`${x}`)}
           style={{ 
-            tickLabels: {fontSize: 8, fontFamily: 'Arial, sans-serif'} // tickLabels의 글꼴을 Arial로 설정합니다.
+            tickLabels: {fontSize: 8, fontFamily: 'Arial, sans-serif'}
           }}
         />
         <VictoryBar
           data={chartData}
           style={{
-            data: { fill: "#A59D9D" },
-            labels: { fill: "#A59D9D" }
+            data: { fill: "#221E1E" },
+            labels: { fill: "#221E1E" }
           }}
         />
       </VictoryChart>
-    </ChartsContainer>
+    </MonthlyChartContainer>
   );
 }
 
-const ChartsContainer = styled.div`
+const MonthlyChartContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,9 +50,9 @@ const ChartsContainer = styled.div`
   width: 100%;
 `;
 
-const ChartTitle = styled.h2`
+const ChartTitle = styled.h3`
   font-family: Arial, sans-serif;
-  margin-bottom: -2.5em;
+  margin-bottom: -1em;
 `;
 
-export default DataCharts;
+export default MonthlyChart;

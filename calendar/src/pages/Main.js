@@ -5,7 +5,8 @@ import 'react-calendar/dist/Calendar.css';
 import Modal from 'react-modal';
 import DateModal from '../components/DateModal';
 import ForSearch from '../components/ForSearch';
-import DataCharts from '../components/DataCharts';
+import MonthlyChart from '../components/MonthlyChart';
+import YearlyChart from '../components/YearlyChart';
 
 Modal.setAppElement('#root');
 
@@ -112,7 +113,10 @@ function Main() {
 				{selectedDate && <DateModal date={selectedDate} setDate={setSelectedDate} closeModal={closeModal} />}
       </Modal>
 			<ChartsContainer>
-					{data && <DataCharts data={data} />}
+					{data &&
+          <MonthlyChart data={data} />
+          }
+          <YearlyChart />
 			</ChartsContainer>
     </MainContainer>
   );
@@ -238,6 +242,8 @@ const CalendarContainer = styled.div`
 const ChartsContainer = styled.div`
 	width: 100%;
 	min-height: 3em;
+  display: flex;
+  flex-direction: row;
 `;
 
 export default Main;
