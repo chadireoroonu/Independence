@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 function ForSearch() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
+  const navigate = useNavigate();
 
   console.log(search);
   console.log(results);
@@ -39,7 +41,6 @@ function ForSearch() {
     return result;
   };
   
-  // handleSearch 함수를 아래와 같이 수정합니다.
   const handleSearch = () => {
     if (search !== '') {
       let filteredData = [];
@@ -47,16 +48,22 @@ function ForSearch() {
         Object.entries(days).forEach(([day, events]) => {
           events.forEach(event => {
             const foundItems = findAllInObject(event, search, event.year, month, day);
-            filteredData = [...filteredData, ...foundItems];
+            foundItems.forEach(foundItem => {
+              // filteredData에 동일한 항목이 없는 경우에만 추가
+              if (!filteredData.some(item => JSON.stringify(item) === JSON.stringify(foundItem))) {
+                filteredData.push(foundItem);
+              }
+            });
           });
         });
       });
       setResults(filteredData);
+      navigate('/Independence/searchresult', { state: { results: filteredData, keyword: search } });
     } else {
       setResults([]);
     }
   };
-
+  
   return (
     <ForSearchContainer>
       <img src={`${process.env.REACT_APP_PUBLIC_URL}/search.png`} />
@@ -68,12 +75,6 @@ function ForSearch() {
         />
         <SearchButton type="submit" onClick={handleSearch}>검색</SearchButton>
       </SearchContainer>
-      {results.map((result, index) => (
-        <div key={index}>
-            <p>{result.year}년 {result.month}월 {result.day}일</p>
-            <p>{result.event.event}</p>
-        </div>
-        ))}
     </ForSearchContainer>
   );
 }
@@ -99,7 +100,7 @@ const SearchContainer = styled.div`
 const SearchInput = styled.input`
   width: 85%;
   height: 3em;
-  padding: 0 10px;
+  padding: 0 20px;
   border: none;
   border-radius: 10px 0 0 10px;
   outline: none;
