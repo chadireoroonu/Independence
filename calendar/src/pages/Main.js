@@ -25,7 +25,7 @@ function Main() {
 	}
 
 	useEffect(() => {
-    fetch('/data.json')
+    fetch(process.env.PUBLIC_URL + '/data.json')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.log(error));
