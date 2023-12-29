@@ -16,7 +16,6 @@ function Main() {
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
-		console.log(selectedDate);
 		setModalOpen(true);
   };
 

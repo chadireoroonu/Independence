@@ -21,11 +21,11 @@ function EachEvent({ event }) {
             <span>네이버에서 자세히보기</span>
           </SearchLink>
           <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-            <img src={`${process.env.PUBLIC_URL}randomNum2}.png`} />
+            <img src={`${process.env.PUBLIC_URL}/tagImgs/${randomNum2}.png`} />
             <span>구글에서 자세히보기</span>
           </SearchLink>
           <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-            <img ssrc={`${process.env.REACT_APP_PUBLIC_URL}/tagImgs/${randomNum3}.png`} />
+            <img src={`${process.env.REACT_APP_PUBLIC_URL}/tagImgs/${randomNum3}.png`} />
             <span>다음에서 자세히보기</span>
           </SearchLink>
           <SearchLink href={`https://www.bing.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">

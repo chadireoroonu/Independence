@@ -19,7 +19,7 @@ function DateModal({ date, setDate, closeModal }) {
   };
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch(`${process.env.REACT_APP_PUBLIC_URL}/data.json`)
       .then(response => response.json())
       .then(data => {
         const monthData = data.find(item => item.month === String(date.getMonth() + 1));
