@@ -14,9 +14,9 @@ function App() {
           <HeaderTitle>
             <Link to="/Independence/">독립달력</Link>
           </HeaderTitle>
-          <HeaderTitle>
+          {/* <HeaderTitle>
             <Link to="/Independence/info">소개</Link>
-          </HeaderTitle>
+          </HeaderTitle> */}
           <HeaderTitle>
             <Link to="/Independence/funding">펀딩</Link>
           </HeaderTitle>
@@ -24,7 +24,7 @@ function App() {
         <div id='body'>
           <Routes>
             <Route path="/Independence/" element={<Main />} />
-            <Route path="/Independence/info" element={<Info />} />
+            {/* <Route path="/Independence/info" element={<Info />} /> */}
             <Route path="/Independence/funding" element={<Funding />} />
             <Route path="/Independence/searchresult" element={<SearchResult />} />
           </Routes>
@@ -58,9 +58,11 @@ const StyledApp = styled.div`
 
 const Header = styled.div`
   width: 100%;
+  height: 2.5em;
   display: flex;
   flex-direction: row;
-  background-color: #F4EEEE;
+  align-items: center;
+  // background-color: #F4EEEE;
   padding: 10px;
 `;
 
