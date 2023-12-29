@@ -17,19 +17,19 @@ function EachEvent({ event }) {
         <p>{event.event}</p>
         <SearchLinkContainer>
           <SearchLink href={`https://search.naver.com/search.naver?query=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-            <img src={`/tagImgs/${randomNum1}.png`} />
+            <img src={`${process.env.PUBLIC_URL}/tagImgs/${randomNum1}.png`} />
             <span>네이버에서 자세히보기</span>
           </SearchLink>
           <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-          <img src={`/tagImgs/${randomNum2}.png`} />
+            <img src={`${process.env.PUBLIC_URL}randomNum2}.png`} />
             <span>구글에서 자세히보기</span>
           </SearchLink>
           <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-          <img src={`/tagImgs/${randomNum3}.png`} />
+            <img ssrc={`${process.env.REACT_APP_PUBLIC_URL}/tagImgs/${randomNum3}.png`} />
             <span>다음에서 자세히보기</span>
           </SearchLink>
           <SearchLink href={`https://www.bing.com/search?q=${encodeURIComponent(event.tag)}`} target="_blank" rel="noopener noreferrer">
-          <img src={`/tagImgs/${randomNum4}.png`} />
+            <img src={`${process.env.REACT_APP_PUBLIC_URL}/tagImgs/${randomNum4}.png`} />
             <span>빙에서 자세히보기</span>
           </SearchLink>
         </SearchLinkContainer>

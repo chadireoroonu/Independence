@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function ForSearch() {
     return (
       <ForSearchContainer>
-        <img src="/search.png" alt="search" /> 
+        <img src={`${process.env.REACT_APP_PUBLIC_URL}/search.png`} />
         <SearchContainer>
           <SearchInput type="text" placeholder="검색 키워드를 입력하세요"/>
           <SearchButton type="submit">검색</SearchButton>
