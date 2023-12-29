@@ -38,20 +38,22 @@ function DateModal({ date, setDate, closeModal }) {
         <UpperRed/>
         <UpperBlue/>
       </UpperModal>
-      <CloseButtonContainer>
-        <CloseButton onClick={closeModal}>X</CloseButton>
-      </CloseButtonContainer>
-      <HeaderContainer>
-      <ArrowButton onClick={moveToPrevDay}>{"<"}</ArrowButton>
-      <DateText>{`${date.getMonth() + 1}월 ${date.getDate()}일`}</DateText>
-      <ArrowButton onClick={moveToNextDay}>{">"}</ArrowButton>
-      </HeaderContainer>
-      <CountContainer>
-        <h4>오늘의 사건은 {events.length}건 입니다.</h4>
-      </CountContainer>
-      <AllEventsContainer>
-        <AllEvents events={events} />
-      </AllEventsContainer>
+      <ModalContentContainer>
+        <CloseButtonContainer>
+          <CloseButton onClick={closeModal}>X</CloseButton>
+        </CloseButtonContainer>
+        <HeaderContainer>
+          <ArrowButton onClick={moveToPrevDay}>{"<"}</ArrowButton>
+          <DateText>{`${date.getMonth() + 1}월 ${date.getDate()}일`}</DateText>
+          <ArrowButton onClick={moveToNextDay}>{">"}</ArrowButton>
+        </HeaderContainer>
+        <CountContainer>
+          <h4>오늘의 사건은 {events.length}건 입니다.</h4>
+        </CountContainer>
+        <AllEventsContainer>
+          <AllEvents events={events} />
+        </AllEventsContainer>
+      </ModalContentContainer>
       <LowerModal>
         <LowerRed/>
         <LowerBlue/>
@@ -65,69 +67,77 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   position: relative;
   // background-color: red;
   margin: -1em;
   justify-content: space-between;
 `;
 
-const CloseButtonContainer = styled.div`
-  min-height: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 const UpperModal = styled.div`
-  width: 100%;
+width: 100%;
   height: 0.7em;
   display: flex;
   flex-direction: row;
   background-color: black;
-`;
-
-const UpperRed = styled.div`
+  `;
+  
+  const UpperRed = styled.div`
   flex: 3;
   height: 100%;
   background-color: #E8415B;
-`;
-
-const UpperBlue = styled.div`
+  `;
+  
+  const UpperBlue = styled.div`
   flex: 2;
   height: 100%;
   background-color: #1C4A9F;
-`;
-
-const LowerModal = styled.div`
+  `;
+  
+  const LowerModal = styled.div`
   width: 100%;
   height: 0.7em;
 	display: flex;
 	flex-direction: row;
   background-color: black;
-`;
-
-const LowerRed = styled.div`
+  `;
+  
+  const LowerRed = styled.div`
 	flex: 2;
 	height: 100%;
 	background-color: #E8415B;
-`;
-
-const LowerBlue = styled.div`
+  `;
+  
+  const LowerBlue = styled.div`
 	flex: 3;
 	height: 100%;
 	background-color: #1C4A9F;
-`;
+  `;
 
-const HeaderContainer = styled.div`
+  const ModalContentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 30em;
+  `;
+  
+  const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  justify-items: center;
   align-items: center;
   width: 100%;
   padding: 1em;
   border-bottom: 1px solid #ddd;
-`;
-
+  background-color:
+  `;
+  
+  const CloseButtonContainer = styled.div`
+    min-height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
 
 const CloseButton = styled.button`
   position: absolute;

@@ -7,9 +7,7 @@ function AllEvents({ events }) {
     return (
       <EachEventContainer>
         {
-          events && events.length > 0 ? 
-          events.map((event, index) => <EachEvent key={index} event={event} />) :
-          <p>오늘의 사건 정보가 없습니다.</p>
+          events.map((event, index) => <EachEvent key={index} event={event} />)
         }
       </EachEventContainer>
     );
@@ -19,12 +17,8 @@ const EachEventContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   width: 95%;
-  // padding: 0 1em;
-  // margin: 1em;
-  // border: 1px solid #ddd;
-  // border-radius: 10px;
 `;
 
 export default AllEvents;
