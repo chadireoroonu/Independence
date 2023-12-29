@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Main from './pages/Main';
 import Info from './pages/Info';
 import Funding from './pages/Funding';
+import SearchResult from './pages/SearchResult';
 
 function App() {
   return (
@@ -11,20 +12,21 @@ function App() {
       <StyledApp>
         <Header>
           <HeaderTitle>
-            <Link to="/">독립달력</Link>
+            <Link to="/Independence/">독립달력</Link>
           </HeaderTitle>
           <HeaderTitle>
-            <Link to="/info">소개</Link>
+            <Link to="/Independence/info">소개</Link>
           </HeaderTitle>
           <HeaderTitle>
-            <Link to="/funding">펀딩</Link>
+            <Link to="/Independence/funding">펀딩</Link>
           </HeaderTitle>
         </Header>
         <div id='body'>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/info" element={<Info />} />
-            <Route path="/funding" element={<Funding />} />
+            <Route path="/Independence/" element={<Main />} />
+            <Route path="/Independence/info" element={<Info />} />
+            <Route path="/Independence/funding" element={<Funding />} />
+            <Route path="/Independence/searchresult" element={<SearchResult />} />
           </Routes>
         </div>
         <Footer>
