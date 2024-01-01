@@ -79,20 +79,22 @@ const SearchLink = styled.a`
   align-items: center;
   justify-content: center;
   width: 3em;
+  height: 3em;
   margin: 0.5em;
   color: #221E1E;
 	border: 0.1em solid #A59D9D;
+  border-radius: 50%;
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
   }
 
   img {
-    width: 95%;
-    margin: 0.5em 0;
+    width: 75%;
+    padding: 0.5em;
   }
 
   span {
@@ -101,5 +103,6 @@ const SearchLink = styled.a`
   }
 
 `;
+
 
 export default SearchResult;
