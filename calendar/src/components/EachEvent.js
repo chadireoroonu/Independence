@@ -68,7 +68,7 @@ const SearchLink = styled.a`
   width: 15em;
   color: #221E1E;
 	border: 2px solid #A59D9D;
-	border-radius: 10px;
+	border-radius: 0.5em;
   // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: inherit;

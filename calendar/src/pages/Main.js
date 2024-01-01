@@ -72,7 +72,7 @@ function Main() {
 							}}
 						>
 							{Array(currentDayData.length).fill().map((_, index) => (
-								<span key={index} style={{color: '#A59D9D', fontSize: '15px'}}>●</span>
+								<span key={index} style={{color: '#A59D9D', fontSize: 'auto'}}>●</span>
 							))}
 						</div>
 					);
@@ -182,7 +182,7 @@ const CalendarContainer = styled.div`
 		color: #221E1E;
     width: 100%;
     min-height: 58vh;
-    border: 1px solid #eeeeee;
+    border: 0.15em solid #eeeeee;
   }
 
 	.react-calendar__navigation {
@@ -204,8 +204,8 @@ const CalendarContainer = styled.div`
   .react-calendar__tile {
     /* each cell css */
     line-height: 7vh;
-    padding: 0 0 20px 0;
-		border: 2px solid transparent;
+    padding: 0 0 2em 0;
+		border: 0.15em solid transparent;
 		position: relative;
   }
 
@@ -215,16 +215,16 @@ const CalendarContainer = styled.div`
   .react-calendar__tile--active {
     background: #ffffff;
 		color: #221E1E;
-		border: 2px solid #A59D9D;
-		border-radius: 10px;
+		border: 0.15em solid #A59D9D;
+		border-radius: 1em;
 		
   }
 
 	// 현재타일
 	.react-calendar__tile--now {
 			background: transparent;
-			border: 2px solid #221E1E;
-			border-radius: 10px;
+			border: 0.15em solid #221E1E;
+			border-radius: 1em;
 	}
 
 	// 주말

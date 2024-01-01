@@ -63,19 +63,18 @@ function DateModal({ date, setDate, closeModal }) {
 }
 
 const ModalContent = styled.div`
-  min-height: 31em;
+  min-height: auto; // 사건 없는 날
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  // background-color: red;
   margin: -1em;
   justify-content: space-between;
 `;
 
 
 const UpperModal = styled.div`
-width: 100%;
+  width: 100%;
   height: 0.7em;
   display: flex;
   flex-direction: row;
@@ -119,17 +118,18 @@ width: 100%;
     flex-direction: column;
     width: 100%;
     min-height: 30em;
+    align-items: center;
   `;
   
   const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  padding: 1em;
-  border-bottom: 1px solid #ddd;
-  background-color:
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    width: 95%;
+    padding: 1em;
+    border-bottom: 0.15em solid #ddd;
+    background-color:
   `;
   
   const CloseButtonContainer = styled.div`

@@ -60,7 +60,7 @@ const LinkContainer = styled.div`
   a {
     width: 25em;
     color: #221E1E;
-    border: 2px solid #A59D9D;
+    border: 0.15em solid #A59D9D;
     color: #000;
     text-decoration: none;
     text-align: center;
