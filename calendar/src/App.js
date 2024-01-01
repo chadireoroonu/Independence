@@ -14,9 +14,9 @@ function App() {
           <HeaderTitle>
             <Link to="/Independence/">독립달력</Link>
           </HeaderTitle>
-          {/* <HeaderTitle>
+          <HeaderTitle>
             <Link to="/Independence/info">소개</Link>
-          </HeaderTitle> */}
+          </HeaderTitle>
           <HeaderTitle>
             <Link to="/Independence/funding">펀딩</Link>
           </HeaderTitle>
@@ -24,7 +24,7 @@ function App() {
         <div id='body'>
           <Routes>
             <Route path="/Independence/" element={<Main />} />
-            {/* <Route path="/Independence/info" element={<Info />} /> */}
+            <Route path="/Independence/info" element={<Info />} />
             <Route path="/Independence/funding" element={<Funding />} />
             <Route path="/Independence/searchresult" element={<SearchResult />} />
           </Routes>
@@ -57,13 +57,13 @@ const StyledApp = styled.div`
 `;
 
 const Header = styled.div`
-  width: 100%;
+  width: 99%;
   height: 2.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
   // background-color: #F4EEEE;
-  padding: 10px;
+  padding: 0.5em 0 0.5em 1%;
 `;
 
 const HeaderTitle = styled.h3`
@@ -80,7 +80,7 @@ const Footer = styled.div`
   background-color: #221E1E;
   color: white;
   font-size: 10pt;
-  padding: 10px;
+  // padding: 1em;
 `;
 
 const FooterFirstLine = styled.div`
