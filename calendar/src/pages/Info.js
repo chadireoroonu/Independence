@@ -5,14 +5,14 @@ function Info() {
   return (
     <InfoContainer>
       <TitleImgContainer>
-        <img src={`${process.env.PUBLIC_URL}/infoImgs/title.png`} alt="소개페이지 메인 사진" />
+        <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/title.png`} alt="소개페이지 메인 사진" />
       </TitleImgContainer>
 
       <InfoImgContainer>
-        <img src={`${process.env.PUBLIC_URL}/infoImgs/1.png`} alt="소개1" />
-        <img src={`${process.env.PUBLIC_URL}/infoImgs/2.png`} alt="소개2" />
-        <img src={`${process.env.PUBLIC_URL}/infoImgs/3.png`} alt="소개3" />
-        <img src={`${process.env.PUBLIC_URL}/infoImgs/4.png`} alt="소개4" />
+        <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/1.png`} alt="소개1" />
+        <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/2.png`} alt="소개2" />
+        <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/3.png`} alt="소개3" />
+        <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/4.png`} alt="소개4" />
       </InfoImgContainer>
 
       <LinkContainer>
