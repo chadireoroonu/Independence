@@ -23,16 +23,16 @@ function SearchResult() {
           </InfoContainer>
           <SearchLinkContainer>
             <SearchLink href={`https://search.naver.com/search.naver?query=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.PUBLIC_URL}/logoImgs/naver.png`} />
+              <img src={`${process.env.PUBLIC_URL}/logoImgs/naver.png`} alt="네이버 로고"/>
             </SearchLink>
             <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.PUBLIC_URL}/logoImgs/google.png`} />
+              <img src={`${process.env.PUBLIC_URL}/logoImgs/google.png`} alt="구글 로고" />
             </SearchLink>
             <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.REACT_APP_PUBLIC_URL}/logoImgs/daum.png`} />
+              <img src={`${process.env.PUBLIC_URL}/logoImgs/daum.png`} alt="다음 로고" />
             </SearchLink>
             <SearchLink href={`https://www.bing.com/search?q=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
-              <img src={`${process.env.REACT_APP_PUBLIC_URL}/logoImgs/bing.png`} />
+              <img src={`${process.env.PUBLIC_URL}/logoImgs/bing.png`} alt="빙 로고" />
             </SearchLink>
           </SearchLinkContainer>
         </EachResult>
@@ -58,6 +58,7 @@ const CountContainer = styled.div`
 const EachResult = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -67,20 +68,20 @@ const InfoContainer = styled.div`
 
 const SearchLinkContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 1em 0
+  justify-content: end;
+  width: 30%;
+  margin: 1em 0;
 `;
 
 const SearchLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 3em;
+  margin: 0.5em;
   color: #221E1E;
-	border: 2px solid #A59D9D;
-	border-radius: 10px;
-  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	border: 0.1em solid #A59D9D;
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease-in-out;
