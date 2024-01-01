@@ -100,9 +100,9 @@ const SearchContainer = styled.div`
 const SearchInput = styled.input`
   width: 85%;
   height: 3em;
-  padding: 0 20px;
+  padding: 0 2em;
   border: none;
-  border-radius: 10px 0 0 10px;
+  border-radius: 1em 0 0 1em;
   outline: none;
   font-size: 16px;
 `;
@@ -111,7 +111,7 @@ const SearchButton = styled.button`
   width: 15%;
   height: 3em;
   border: none;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 1em 1em 0;
   background-color: #221E1E;
   color: #FFFFFF;
   font-size: 16px;
