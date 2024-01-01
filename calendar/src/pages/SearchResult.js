@@ -22,16 +22,16 @@ function SearchResult() {
             <p>{result.event.event}</p>
           </InfoContainer>
           <SearchLinkContainer>
-            <SearchLink href={`https://search.naver.com/search.naver?query=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
+            <SearchLink href={`https://search.naver.com/search.naver?query=${encodeURIComponent(result.event.tag || result.event.event)}`} target="_blank" rel="noopener noreferrer">
               <img src={`${process.env.PUBLIC_URL}/logoImgs/naver.png`} alt="네이버 로고"/>
             </SearchLink>
-            <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
+            <SearchLink href={`https://www.google.com/search?q=${encodeURIComponent(result.event.tag || result.event.event)}`} target="_blank" rel="noopener noreferrer">
               <img src={`${process.env.PUBLIC_URL}/logoImgs/google.png`} alt="구글 로고" />
             </SearchLink>
-            <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
+            <SearchLink href={`https://search.daum.net/search?q=${encodeURIComponent(result.event.tag || result.event.event)}`} target="_blank" rel="noopener noreferrer">
               <img src={`${process.env.PUBLIC_URL}/logoImgs/daum.png`} alt="다음 로고" />
             </SearchLink>
-            <SearchLink href={`https://www.bing.com/search?q=${encodeURIComponent(result.event.tag)}`} target="_blank" rel="noopener noreferrer">
+            <SearchLink href={`https://www.bing.com/search?q=${encodeURIComponent(result.event.tag || result.event.event)}`} target="_blank" rel="noopener noreferrer">
               <img src={`${process.env.PUBLIC_URL}/logoImgs/bing.png`} alt="빙 로고" />
             </SearchLink>
           </SearchLinkContainer>
