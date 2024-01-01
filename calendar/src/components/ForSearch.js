@@ -66,12 +66,17 @@ function ForSearch() {
   
   return (
     <ForSearchContainer>
-      <img src={`${process.env.REACT_APP_PUBLIC_URL}/search.png`} />
+      <img src={`${process.env.REACT_APP_PUBLIC_URL}/search.png`} alt="검색배경사진" />
       <SearchContainer>
         <SearchInput
           type="text"
           placeholder="검색 키워드를 입력하세요"
           onChange={e => setSearch(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              handleSearch();
+            }
+          }}
         />
         <SearchButton type="submit" onClick={handleSearch}>검색</SearchButton>
       </SearchContainer>
