@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ForSearch from '../components/ForSearch';
 import styled from 'styled-components';
@@ -6,16 +7,30 @@ function SearchResult() {
   const location = useLocation();
   const results = location.state?.results || [];
   const keyword = location.state?.keyword || '';
+  const [sortType, setSortType] = useState('asc');
 
-  console.log(results)
+  // 결과 정렬
+  const sortedResults = [...results].sort((a, b) => {
+    const dateA = new Date(a.year, a.month - 1, a.day);
+    const dateB = new Date(b.year, b.month - 1, b.day);
+
+    return sortType === 'asc' ? dateA - dateB : dateB - dateA;
+  });
+
+  const toggleSortType = () => {
+    setSortType(prev => prev === 'asc' ? 'desc' : 'asc');
+  };
 
   return (
     <SearchResultContainer>
       <ForSearch />
       <CountContainer>
         <h3>{`${keyword}에 대한 검색 결과는 ${results.length} 건 입니다.`}</h3>
+        <button onClick={toggleSortType}>
+          {sortType === 'asc' ? '날짜 내림차순 정렬' : '날짜 오름차순 정렬'}
+        </button>
       </CountContainer>
-      {results.map((result, index) => (
+      {sortedResults.map((result, index) => (
         <EachResult key={index}>
           <InfoContainer>
             <h4>{result.year}년 {result.month}월 {result.day}일</h4>
