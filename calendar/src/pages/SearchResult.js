@@ -25,11 +25,13 @@ function SearchResult() {
     <SearchResultContainer>
       <ForSearch />
       <CountContainer>
-        <h3>{`${keyword}에 대한 검색 결과는 ${results.length} 건 입니다.`}</h3>
-        <button onClick={toggleSortType}>
-          {sortType === 'asc' ? '날짜 내림차순 정렬' : '날짜 오름차순 정렬'}
-        </button>
+        <h3>{`'${keyword}' 에 대한 검색 결과는 ${results.length} 건 입니다.`}</h3>
       </CountContainer>
+      <SortContainer>
+        <SortButton onClick={toggleSortType}>
+          {sortType === 'asc' ? '내림차순으로 변경' : '오름차순으로 변경'}
+        </SortButton>
+      </SortContainer>
       {sortedResults.map((result, index) => (
         <EachResult key={index}>
           <InfoContainer>
@@ -60,14 +62,32 @@ const SearchResultContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 98%;
-  padding: 1%
+  padding: 1%;
 `;
 
 const CountContainer = styled.div`
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 1em;
+  padding: 1em 0 0 0;
+  color: #221E1E;
+`;
+
+const SortContainer = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  justify-content: end;
+  padding: 0 0.5em 0.5em 0;
+`;
+
+const SortButton = styled.div`
+  border: 0.1em solid #221E1E;
+  border-radius: 0.5em;
+  padding: 0.3em 0.5em;
+  color: #FFFFFF;
+  background-color: #221E1E;
+  font-size: 0.9em;
 `;
 
 const EachResult = styled.div`
