@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Independence/static/css/main.4343c6e1.css",
-    "main.js": "/Independence/static/js/main.8941e29f.js",
+    "main.js": "/Independence/static/js/main.c3137741.js",
     "static/js/787.b94b3e6f.chunk.js": "/Independence/static/js/787.b94b3e6f.chunk.js",
     "index.html": "/Independence/index.html",
     "main.4343c6e1.css.map": "/Independence/static/css/main.4343c6e1.css.map",
-    "main.8941e29f.js.map": "/Independence/static/js/main.8941e29f.js.map",
+    "main.c3137741.js.map": "/Independence/static/js/main.c3137741.js.map",
     "787.b94b3e6f.chunk.js.map": "/Independence/static/js/787.b94b3e6f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4343c6e1.css",
-    "static/js/main.8941e29f.js"
+    "static/js/main.c3137741.js"
   ]
 }
