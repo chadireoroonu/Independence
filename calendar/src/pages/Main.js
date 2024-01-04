@@ -68,7 +68,7 @@ function Main() {
 								right: '0', 
 								textAlign: 'center', 
 								color: 'black',
-								fontSize: '8px'
+								fontSize: 'auto'
 							}}
 						>
 							{Array(currentDayData.length).fill().map((_, index) => (
@@ -190,14 +190,14 @@ const CalendarContainer = styled.div`
 		padding: 0 2.5em;
 
 		.react-calendar__navigation__label {
-			font-size: 20px;
+			font-size: 1.3em;
 			font-weight: bold;
 		}
 	}
 
 	.react-calendar__month-view__weekdays__weekday {
 		min-height: 3em;
-    font-size: 15px;
+    font-size: 1.3em;
 		font-weight: bold;
   }
 	

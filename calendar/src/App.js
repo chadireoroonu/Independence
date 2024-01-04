@@ -72,7 +72,7 @@ const Header = styled.div`
 `;
 
 const HeaderTitle = styled.h3`
-  margin: 0 10px;
+  margin: 0 0.7em;
 `;
 
 const Footer = styled.div`
@@ -84,7 +84,7 @@ const Footer = styled.div`
   align-items: center;
   background-color: #221E1E;
   color: white;
-  font-size: 10pt;
+  font-size: 0.9em;
   // padding: 1em;
 `;
 

@@ -67,9 +67,8 @@ const SearchLink = styled.a`
   align-items: center;
   width: 15em;
   color: #221E1E;
-	border: 2px solid #A59D9D;
+	border: 0.15em solid #A59D9D;
 	border-radius: 0.5em;
-  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: inherit;
   transition: transform 0.3s ease-in-out;

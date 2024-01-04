@@ -109,7 +109,7 @@ const SearchInput = styled.input`
   border: none;
   border-radius: 1em 0 0 1em;
   outline: none;
-  font-size: 16px;
+  font-size: 1em;
 `;
 
 const SearchButton = styled.button`
@@ -119,7 +119,7 @@ const SearchButton = styled.button`
   border-radius: 0 1em 1em 0;
   background-color: #221E1E;
   color: #FFFFFF;
-  font-size: 16px;
+  font-size: 1em;
   cursor: pointer;
 `;
 
