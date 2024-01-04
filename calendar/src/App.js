@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import Main from './pages/Main';
 import About from './pages/About';
+import Info from './pages/Info';
 import Funding from './pages/Funding';
 import SearchResult from './pages/SearchResult';
 
@@ -18,6 +19,9 @@ function App() {
             <Link to="/Independence/about">소개</Link>
           </HeaderTitle>
           <HeaderTitle>
+            <Link to="/Independence/info">정보</Link>
+          </HeaderTitle>
+          <HeaderTitle>
             <Link to="/Independence/funding">펀딩</Link>
           </HeaderTitle>
         </Header>
@@ -26,6 +30,7 @@ function App() {
             <Route path="/Independence/" element={<Main />} />
             <Route path="/Independence/about" element={<About />} />
             <Route path="/Independence/funding" element={<Funding />} />
+            <Route path="/Independence/info" element={<Info />} />
             <Route path="/Independence/searchresult" element={<SearchResult />} />
           </Routes>
         </div>
