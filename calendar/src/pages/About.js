@@ -1,29 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Info() {
+function About() {
   return (
-    <InfoContainer>
+    <AboutContainer>
       <TitleImgContainer>
         <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/title.png`} alt="소개페이지 메인 사진" />
       </TitleImgContainer>
 
-      <InfoImgContainer>
+      <AboutImgContainer>
         <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/1.png`} alt="소개1" />
         <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/2.png`} alt="소개2" />
         <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/3.png`} alt="소개3" />
         <img src={`${process.env.REACT_APP_PUBLIC_URL}/infoImgs/4.png`} alt="소개4" />
-      </InfoImgContainer>
+      </AboutImgContainer>
 
       <LinkContainer>
         <a href="https://www.cses.re.kr/" target="_blank" rel="noreferrer">CSES 홈페이지 바로가기</a>
         <a href="https://www.cses.re.kr/business/research.do" target="_blank" rel="noreferrer">CSES Fellowship 바로가기</a>
       </LinkContainer>
-    </InfoContainer>
+    </AboutContainer>
   );
 }
 
-const InfoContainer = styled.div`
+const AboutContainer = styled.div`
   width: 98%;
   min-height: 100vh;
   margin: 0 1%;
@@ -39,7 +39,7 @@ const TitleImgContainer = styled.div`
   }
 `;
 
-const InfoImgContainer = styled.div`
+const AboutImgContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 5em;
@@ -72,4 +72,4 @@ const LinkContainer = styled.div`
   }
 `;
 
-export default Info;
+export default About;

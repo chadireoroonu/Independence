@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import Main from './pages/Main';
-import Info from './pages/Info';
+import About from './pages/About';
 import Funding from './pages/Funding';
 import SearchResult from './pages/SearchResult';
 
@@ -15,7 +15,7 @@ function App() {
             <Link to="/Independence/">독립달력</Link>
           </HeaderTitle>
           <HeaderTitle>
-            <Link to="/Independence/info">소개</Link>
+            <Link to="/Independence/about">소개</Link>
           </HeaderTitle>
           <HeaderTitle>
             <Link to="/Independence/funding">펀딩</Link>
@@ -24,7 +24,7 @@ function App() {
         <div id='body'>
           <Routes>
             <Route path="/Independence/" element={<Main />} />
-            <Route path="/Independence/info" element={<Info />} />
+            <Route path="/Independence/about" element={<About />} />
             <Route path="/Independence/funding" element={<Funding />} />
             <Route path="/Independence/searchresult" element={<SearchResult />} />
           </Routes>
@@ -88,7 +88,7 @@ const FooterFirstLine = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: row;
-  margin-bottom: -2%;
+  // margin-bottom: -2%;
 `;
 
 const InnerFooterLine = styled.div`
