@@ -18,9 +18,9 @@ function App() {
           <HeaderTitle>
             <Link to="/Independence/about">소개</Link>
           </HeaderTitle>
-          <HeaderTitle>
+          {/* <HeaderTitle>
             <Link to="/Independence/info">정보</Link>
-          </HeaderTitle>
+          </HeaderTitle> */}
           <HeaderTitle>
             <Link to="/Independence/funding">펀딩</Link>
           </HeaderTitle>
