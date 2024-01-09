@@ -1,22 +1,57 @@
 [
   {
-    "name": "temp",
-    "link": "http:temp",
+    "name": "독립기념관",
+    "url": "https://search.i815.or.kr/",
+    "type": "public",
     "contents": ""
   },
   {
-    "name": "temp",
-    "link": "http:temp",
+    "name": "대한민국역사박물관",
+    "url": "https://www.much.go.kr/",
+    "type": "public",
     "contents": ""
   },
   {
-    "name": "temp",
-    "link": "http:temp",
+    "name": "공훈전자사료관",
+    "url": "https://e-gonghun.mpva.go.kr/",
+    "type": "public",
     "contents": ""
   },
   {
-    "name": "temp",
-    "link": "http:temp",
+    "name": "국사편찬위원회",
+    "url": "https://www.history.go.kr/",
+    "type": "public",
+    "contents": ""
+  },
+  {
+    "name": "국가보훈부",
+    "url": "https://www.mpva.go.kr/",
+    "type": "public",
+    "contents": ""
+  },
+  {
+    "name": "대통령 기록관",
+    "url": "http://19together100.pa.go.kr/",
+    "type": "public",
+    "contents": ""
+  },
+  {
+    "name": "한국의 지식콘텐츠",
+    "url": "https://www.krpia.co.kr/",
+    "type": "private",
+    "contents": ""
+  },
+  {
+    "name": "독립운동가의 꿈",
+    "url": "https://kkum.prkorea.com/",
+    "type": "private",
+    "contents": ""
+  },
+  {
+    "name": "",
+    "url": "",
+    "type": "",
     "contents": ""
   }
+  
 ]
