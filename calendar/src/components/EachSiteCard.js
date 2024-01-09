@@ -8,7 +8,7 @@ function EachSiteCard({ site }) {
   }
 
   return (
-    site &&
+    site.name &&
     <EachCardContainer onClick={handleOnClick}>
       <h3>{site.name}</h3>
       <h5>{site.url}</h5>
@@ -17,10 +17,19 @@ function EachSiteCard({ site }) {
 }
 
 const EachCardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0 0 1em 0;
+  box-sizing: border-box;
+  width: calc(50% - 2em);
+  color: #221E1E;
+  border: 0.15em solid #A59D9D;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
   
 export default EachSiteCard;

@@ -33,10 +33,15 @@ function Info() {
           </OptionContainer>
         </GuideContainer>
         <CardContainer>
-          <h2>관련 사이트</h2>
-          {sites && sites.filter(site => option === 'all' || site.type === option).map((site, index) => (
-            <EachSiteCard key={index} site={site} />
-          ))}
+          <TitleContainer>
+            <h2>관련 사이트</h2>
+            <h4>총 {sites && sites.filter(site => option === 'all' || site.type === option).length}건</h4>
+          </TitleContainer>
+          <SiteCardContainer>
+            {sites && sites.filter(site => option === 'all' || site.type === option).map((site, index) => (
+              <EachSiteCard key={index} site={site} />
+            ))}
+          </SiteCardContainer>
         </CardContainer>
       </ContentsContainer>
     </InfoContainer>
@@ -95,6 +100,40 @@ const CardContainer = styled.div`
   box-sizing: border-box;
   flex-direction: column;
   width: 80%;
+  padding: 0 1em;
+`;
+
+// const TitleContainer = styled.div`
+//   display: flex;
+//   width: 100%;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-contents: space-between;
+//   background-color: red;
+// `;
+
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+
+  h2 {
+    flex: 1;
+  }
+
+  h4 {
+    text-align: end;
+  }
+`;
+
+const SiteCardContainer = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
   padding: 0 1em;
 `;
 
