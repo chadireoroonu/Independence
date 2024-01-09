@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import EachSiteCard from '../components/EachSiteCard';
 
 function Info() {
   const [option, setOption] = useState("all");
+  const [sites, setSites] = useState(null);
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_PUBLIC_URL}/info.json`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      setSites(data);})
+    .catch(error => console.log(error));
+  }, []);
 
   return (
     <InfoContainer>
@@ -22,7 +33,10 @@ function Info() {
           </OptionContainer>
         </GuideContainer>
         <CardContainer>
-          <p>card</p>
+          <h2>관련 사이트</h2>
+          {sites && sites.filter(site => option === 'all' || site.type === option).map((site, index) => (
+            <EachSiteCard key={index} site={site} />
+          ))}
         </CardContainer>
       </ContentsContainer>
     </InfoContainer>
