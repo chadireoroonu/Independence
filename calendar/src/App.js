@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import Main from './pages/Main';
@@ -8,21 +8,25 @@ import Funding from './pages/Funding';
 import SearchResult from './pages/SearchResult';
 
 function App() {
+  const [ now, setNow ] = useState("main");
+
+  console.log("지금페이지는 "+now);
+
   return (
     <Router>
       <StyledApp>
         <Header>
-          <HeaderTitle>
-            <Link to="/Independence/">독립달력</Link>
+          <HeaderTitle selected={now === "main"}>
+            <Link onClick={() => setNow("main")} to="/Independence/">독립달력</Link>
           </HeaderTitle>
-          <HeaderTitle>
-            <Link to="/Independence/about">소개</Link>
+          <HeaderTitle selected={now === "about"}>
+            <Link onClick={() => setNow("about")} to="/Independence/about">소개</Link>
           </HeaderTitle>
-          <HeaderTitle>
-            <Link to="/Independence/info">정보</Link>
+          <HeaderTitle selected={now === "info"}>
+            <Link onClick={() => setNow("info")} to="/Independence/info">정보</Link>
           </HeaderTitle>
-          <HeaderTitle>
-            <Link to="/Independence/funding">펀딩</Link>
+          <HeaderTitle selected={now === "funding"}>
+            <Link onClick={() => setNow("funding")} to="/Independence/funding">펀딩</Link>
           </HeaderTitle>
         </Header>
         <div id='body'>
@@ -73,6 +77,12 @@ const Header = styled.div`
 
 const HeaderTitle = styled.h3`
   margin: 0 0.7em;
+
+  a {
+    // text-decoration: none;
+    color: #221E1E;
+    text-decoration: ${props => props.selected ? 'underline' : 'none'};
+  }
 `;
 
 const Footer = styled.div`
