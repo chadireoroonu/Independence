@@ -59,15 +59,22 @@ const LinkContainer = styled.div`
 
   a {
     width: 25em;
-    color: #221E1E;
-    border: 0.15em solid #A59D9D;
-    color: #000;
+    color: #ffffff;
+    background-color: #221E1E;
     text-decoration: none;
     text-align: center;
-    padding: 1em;
+    padding: 1.3em;
+    border-radius: 0.5em;
 
-    &:hover {
-      transform: scale(1.05);
+    // &:hover {
+    //   background-color: #1a1919;
+    // }
+
+    // 버튼 눌리는 효과
+    &:active {
+      background-color: #0d0c0c;
+      box-shadow: 0 0.1em 0.1em -0.05em #000;
+      transform: translateY(0.1em);
     }
   }
 `;
