@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import EachSiteCard from '../components/EachSiteCard';
 
 function Info() {
-  const [option, setOption] = useState("all");
-  const [sites, setSites] = useState(null);
+  const [ option, setOption ] = useState("all");
+  const [ sites, setSites ] = useState(null);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_PUBLIC_URL}/info.json`)
@@ -34,7 +34,7 @@ function Info() {
         </GuideContainer>
         <CardContainer>
           <TitleContainer>
-            <h2>관련 사이트</h2>
+            <h2>{option}분야 관련 사이트</h2>
             <h4>총 {sites && sites.filter(site => option === 'all' || site.type === option).length}건</h4>
           </TitleContainer>
           <SiteCardContainer>
@@ -102,15 +102,6 @@ const CardContainer = styled.div`
   width: 80%;
   padding: 0 1em;
 `;
-
-// const TitleContainer = styled.div`
-//   display: flex;
-//   width: 100%;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-contents: space-between;
-//   background-color: red;
-// `;
 
 const TitleContainer = styled.div`
   display: flex;
