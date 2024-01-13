@@ -5,6 +5,7 @@ import EachSiteCard from '../components/EachSiteCard';
 function Info() {
   const [ option, setOption ] = useState("all");
   const [ sites, setSites ] = useState(null);
+  const type = { all: "전체", public: "공공", private: "민간"};
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_PUBLIC_URL}/info.json`)
@@ -34,7 +35,7 @@ function Info() {
         </GuideContainer>
         <CardContainer>
           <TitleContainer>
-            <h2>{option}분야 관련 사이트</h2>
+            <h2>{type[option]}분야 관련 사이트</h2>
             <h4>총 {sites && sites.filter(site => option === 'all' || site.type === option).length}건</h4>
           </TitleContainer>
           <SiteCardContainer>
