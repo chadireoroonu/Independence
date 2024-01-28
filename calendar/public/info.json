@@ -48,10 +48,33 @@
     "contents": ""
   },
   {
+    "name": "한국민족문화대백과사전",
+    "url": "https://encykorea.aks.ac.kr/",
+    "type": "private",
+    "contents": ""
+  },
+  {
+    "name": "효창독립100년 메모리얼프로젝트",
+    "url": "http://hyochangpark.com/",
+    "type": "private",
+    "contents": ""
+  },
+  {
+    "name": "",
+    "url": "",
+    "type": "",
+    "contents": ""
+  },
+  {
+    "name": "",
+    "url": "",
+    "type": "",
+    "contents": ""
+  },
+  {
     "name": "",
     "url": "",
     "type": "",
     "contents": ""
   }
-  
 ]
