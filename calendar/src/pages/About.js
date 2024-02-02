@@ -17,7 +17,7 @@ function About() {
 
       <LinkContainer>
         <a href="https://www.cses.re.kr/" target="_blank" rel="noreferrer">CSES 홈페이지 바로가기</a>
-        <a href="https://www.cses.re.kr/business/research.do" target="_blank" rel="noreferrer">CSES Fellowship 바로가기</a>
+        <a href="https://svhub.co.kr/fellowship/list" target="_blank" rel="noreferrer">CSES Fellowship 바로가기</a>
       </LinkContainer>
     </AboutContainer>
   );
