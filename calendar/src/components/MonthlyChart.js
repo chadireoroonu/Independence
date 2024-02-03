@@ -15,7 +15,7 @@ function MonthlyChart({ data }) {
 
   return (
     <MonthlyChartContainer>
-      <ChartTitle>{`${data[0].month}월의 사건 수`}</ChartTitle>
+      <ChartTitle>{`이번 달의 사건 수`}</ChartTitle>
       <VictoryChart domainPadding={20}>
         <VictoryAxis
           tickValues={labels.map(label => label + 1)}
