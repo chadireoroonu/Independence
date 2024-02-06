@@ -11,10 +11,10 @@ import YearlyChart from '../components/YearlyChart';
 Modal.setAppElement('#root');
 
 function Main() {
-  const [date, setDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(null);
-	const [modalOpen, setModalOpen] = useState(false);
-	const [data, setData] = useState(null);
+  const [ date, setDate ] = useState(new Date());
+  const [ selectedDate, setSelectedDate ] = useState(null);
+	const [ modalOpen, setModalOpen ] = useState(false);
+	const [ data, setData ] = useState(null);
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
