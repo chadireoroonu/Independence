@@ -4,11 +4,11 @@
 
 문의 : chadireoroonu@gmail.com
 
-사용라이브러리
+## 사용 라이브러리
 
 - react calendar
 
-페이지 소개
+## 페이지 소개
 
 - 홈
   
@@ -21,3 +21,74 @@
 - 펀딩
 
 - 검색
+
+## 파일구조
+```
+calendar
+├─ README.md
+├─ package.json
+├─ public
+│  ├─ aboutImgs
+│  │  ├─ 1.png
+│  │  ├─ 2.png
+│  │  ├─ 3.png
+│  │  ├─ 4.png
+│  │  └─ title.png
+│  ├─ data.json
+│  ├─ favicon.ico
+│  ├─ index.html
+│  ├─ info.json
+│  ├─ logoImgs
+│  │  ├─ bing.png
+│  │  ├─ daum.png
+│  │  ├─ google.png
+│  │  └─ naver.png
+│  ├─ manifest.json
+│  ├─ robots.txt
+│  ├─ search.png
+│  └─ tagImgs
+│     ├─ 1.png
+│     ├─ 2.png
+│     ├─ 3.png
+│     ├─ 4.png
+│     ├─ 5.png
+│     ├─ 6.png
+│     ├─ 7.png
+│     ├─ 8.png
+│     ├─ 9.png
+│     ├─ 10.png
+│     ├─ 11.png
+│     ├─ 12.png
+│     ├─ 13.png
+│     ├─ 14.png
+│     ├─ 15.png
+│     ├─ 16.png
+│     ├─ 17.png
+│     ├─ 18.png
+│     ├─ 19.png
+│     ├─ 20.png
+│     └─ 21.png
+└─ src
+   ├─ App.js
+   ├─ App.test.js
+   ├─ components
+   │  ├─ AllEvents.js
+   │  ├─ DateModal.js
+   │  ├─ EachEvent.js
+   │  ├─ EachSiteCard.js
+   │  ├─ ForSearch.js
+   │  ├─ MonthlyChart.js
+   │  └─ YearlyChart.js
+   ├─ index.css
+   ├─ index.js
+   ├─ logo.svg
+   ├─ pages
+   │  ├─ About.js
+   │  ├─ Funding.js
+   │  ├─ Info.js
+   │  ├─ Main.js
+   │  └─ SearchResult.js
+   ├─ reportWebVitals.js
+   └─ setupTests.js
+
+```
