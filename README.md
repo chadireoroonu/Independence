@@ -1,6 +1,6 @@
 # CSES Fellowship 5기
 
-CSES Fellowship 5기 참여
+CSES Fellowship 5기 참여 산출물
 시민교육 및 독립유공자 생계지원을 위한 '만년형 우리나라 독립 달력'
 
 문의 : chadireoroonu@gmail.com
