@@ -7,9 +7,15 @@ CSES Fellowship 5기 참여 산출물
 
 ## 개발환경
 
+- React 
+
+- yarn 1.22.21
+
 ## 사용 라이브러리
 
 - react calendar
+
+- victory
 
 ## 페이지 소개
 
