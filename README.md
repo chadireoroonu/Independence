@@ -9,6 +9,8 @@ CSES Fellowship 5기 참여 산출물
 
 - React 
 
+- Node.js
+
 - yarn 1.22.21
 
 ## 사용 라이브러리
